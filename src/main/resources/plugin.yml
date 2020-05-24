@@ -2,3 +2,14 @@ name: DistrictElixirs
 version: ${project.version}
 main: com.github.frcsty.districtelixirs.DistrictElixirs
 author: Frcsty
+
+commands:
+  elixir:
+    description: Base command (serves as reload)
+    permission: elixir.commands.<command>
+
+permissions:
+  elixir.commands.reload:
+    description: Grants access to reload command (/elixir)
+  elixir.commands.give:
+    description: Grants access to give command (/elixir give <target> [elixir])

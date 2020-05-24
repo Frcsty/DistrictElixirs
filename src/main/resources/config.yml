@@ -29,4 +29,17 @@ elixirs:
       speed:
         duration: 90
         amplifier: 1
-
+  aquatic:
+    material: POTION
+    data: 2
+    display: '&bAquatic Elixir'
+    lore:
+      - '&7Water Breathing (30:00)'
+      - ''
+      - '&7Explore the sunken ruins with ease'
+      - '&7while using this bizzare concoction.'
+      - ''
+    effects:
+      water_breathing:
+        duration: 1800
+        amplifier: 0
