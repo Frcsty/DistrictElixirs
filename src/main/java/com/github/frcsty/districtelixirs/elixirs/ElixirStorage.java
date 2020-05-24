@@ -41,19 +41,21 @@ public class ElixirStorage
             final List<String> lore = elixir.getStringList("lore");
             final Material material = Material.matchMaterial(elixir.getString("material"));
             final int data = elixir.getInt("data");
+            final boolean splash = elixir.getBoolean("splash");
+            final String type = elixir.getString("type");
             final List<PotionEffect> effects = new ArrayList<>();
 
             final ConfigurationSection effectsSection = elixir.getConfigurationSection("effects");
             for (String effect : effectsSection.getKeys(false)) {
-                final PotionEffectType type = PotionEffectType.getByName(effect.toUpperCase());
+                final PotionEffectType potionEffectType = PotionEffectType.getByName(effect.toUpperCase());
                 final int duration = effectsSection.getInt(effect + ".duration");
                 final int amplifier = effectsSection.getInt(effect + ".amplifier");
-                final PotionEffect potionEffect = new PotionEffect(type, duration * 20, amplifier, false, true);
+                final PotionEffect potionEffect = new PotionEffect(potionEffectType, duration * 20, amplifier, false, true);
 
                 effects.add(potionEffect);
             }
 
-            final Elixir object = new Elixir(e, material, data, display, lore, effects);
+            final Elixir object = new Elixir(e, material, data, display, lore, effects, splash, type);
             setElixir(e, object);
         }
     }

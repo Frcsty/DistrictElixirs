@@ -5,6 +5,7 @@ import org.bukkit.potion.PotionEffect;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class Elixir
 {
 
@@ -14,9 +15,10 @@ public class Elixir
     private String             display;
     private List<String>       lore;
     private List<PotionEffect> effects;
-    private int amount;
+    private boolean splash;
+    private String type;
 
-    Elixir(final String name, final Material material, final int data, final String display, final List<String> lore, final List<PotionEffect> effects, final int amount)
+    Elixir(final String name, final Material material, final int data, final String display, final List<String> lore, final List<PotionEffect> effects, final boolean splash, final String type)
     {
         this.name = name;
         this.material = material;
@@ -24,7 +26,8 @@ public class Elixir
         this.display = display;
         this.lore = lore;
         this.effects = effects;
-        this.amount = amount;
+        this.splash = splash;
+        this.type = type;
     }
 
     public final String getName()
@@ -87,8 +90,15 @@ public class Elixir
         this.effects = values;
     }
 
-    public final int getAmount() { return this.amount; }
+    public final boolean getSplash() {
+        return this.splash;
+    }
 
-    public final void setAmount(final int value) { this.amount = value; }
+    public final void setSplash(final boolean value) {
+        this.splash = value;
+    }
 
+    public final String getType() { return this.type; }
+
+    public final void setType(final String value) { this.type = value; }
 }

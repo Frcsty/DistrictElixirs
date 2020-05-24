@@ -9,7 +9,9 @@ messages:
 
 elixirs:
   fused:
+    type: INSTANT_DAMAGE
     material: POTION
+    splash: true
     data: 1
     display: '&dFused Elixir'
     lore:
@@ -24,7 +26,9 @@ elixirs:
         duration: 90
         amplifier: 1
   aquatic:
+    type: WATER_BREATHING
     material: POTION
+    splash: false
     data: 1
     display: '&bAquatic Elixir'
     lore:

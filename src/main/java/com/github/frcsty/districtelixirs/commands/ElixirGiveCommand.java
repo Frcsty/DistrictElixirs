@@ -18,6 +18,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
+@SuppressWarnings("unused")
 @Command("elixir")
 public class ElixirGiveCommand extends CommandBase
 {
@@ -55,7 +56,7 @@ public class ElixirGiveCommand extends CommandBase
 
     @SubCommand("give")
     @Permission("elixirs.commands.give")
-    public void giveElixir(final CommandSender sender, final String t, final String e, final int amount)
+    public void giveElixir(final CommandSender sender, final String t, final String e, final Integer amount)
     {
         final Player target = Bukkit.getPlayerExact(t);
         final String elixir = e.toLowerCase();
@@ -80,11 +81,12 @@ public class ElixirGiveCommand extends CommandBase
             return;
         }
 
-        final ItemStack elixirItem = new ElixirBuilder(elixirObject.getMaterial(), elixirObject.getData(), elixirObject.getDisplay(), elixirObject.getLore(), elixirObject.getEffects(), elixirObject.getAmount()).getItem();
+        final ItemStack elixirItem = new ElixirBuilder(elixirObject.getMaterial(), elixirObject.getData(), elixirObject.getDisplay(), elixirObject.getLore(), elixirObject.getEffects(), amount, elixirObject.getSplash(), elixirObject.getType()).getItem();
 
         if (target.getInventory().firstEmpty() == -1)
         {
             sender.sendMessage(Color.colorize(Replace.replaceString(config.getString("messages.target-full-inventory"))));
+            target.getLocation().getWorld().dropItem(target.getLocation(), elixirItem);
             return;
         }
 
