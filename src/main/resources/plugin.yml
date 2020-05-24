@@ -1,0 +1,4 @@
+name: DistrictElixirs
+version: ${project.version}
+main: com.github.frcsty.districtelixirs.DistrictElixirs
+author: Frcsty

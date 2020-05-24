@@ -1,0 +1,32 @@
+
+messages:
+  reload-plugin: '&8[&5Elixirs&8] &aSuccessfully reloaded the plugin in &f{time}ms&a.'
+  invalid-player: '&8[&5Elixirs&8] &7This player does not exist!'
+  offline-player: '&8[&5Elixirs&8] &7Player &f{player} &7is offline.'
+  invalid-elixir: '&8[&5Elixirs&8] &7Elixir &f{elixir} &7does not exist!'
+  target-full-inventory: '&8[&5Elixirs&8] &7Player &f{player} &7has a full inventory! Dropping items on the ground.'
+
+
+elixirs:
+  fused:
+    material: POTION
+    data: 1
+    display: '&dFused Elixir'
+    lore:
+      - '&7Strength II (1:30)'
+      - '&7Speed II (1:30)'
+      - ''
+      - '&5When Applied:'
+      - '&9+40% Speed'
+      - '&9+260% Attack Damage'
+      - '&7Used by warriors to destroy their'
+      - '&7opponents in intense battles!'
+      - ''
+    effects:
+      increase_damage:
+        duration: 90
+        amplifier: 1
+      speed:
+        duration: 90
+        amplifier: 1
+
