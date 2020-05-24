@@ -17,19 +17,21 @@ public class ElixirBuilder
     private String             display;
     private List<String>       lore;
     private List<PotionEffect> effects;
+    private int amount;
 
-    public ElixirBuilder(final Material material, final int data, final String display, final List<String> lore, final List<PotionEffect> effects)
+    public ElixirBuilder(final Material material, final int data, final String display, final List<String> lore, final List<PotionEffect> effects, final int amount)
     {
         this.material = material;
         this.data = data;
         this.display = display;
         this.lore = lore;
         this.effects = effects;
+        this.amount = amount;
     }
 
     public ItemStack getItem()
     {
-        ItemStack item = new ItemStack(material, 1, (byte) data);
+        ItemStack item = new ItemStack(material, amount, (byte) data);
         final ItemMeta meta = item.getItemMeta();
         final PotionMeta potionMeta = (PotionMeta) meta;
 

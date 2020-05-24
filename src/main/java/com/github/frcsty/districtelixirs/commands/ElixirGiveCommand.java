@@ -55,7 +55,7 @@ public class ElixirGiveCommand extends CommandBase
 
     @SubCommand("give")
     @Permission("elixirs.commands.give")
-    public void giveElixir(final CommandSender sender, final String t, final String e)
+    public void giveElixir(final CommandSender sender, final String t, final String e, final int amount)
     {
         final Player target = Bukkit.getPlayerExact(t);
         final String elixir = e.toLowerCase();
@@ -80,7 +80,7 @@ public class ElixirGiveCommand extends CommandBase
             return;
         }
 
-        final ItemStack elixirItem = new ElixirBuilder(elixirObject.getMaterial(), elixirObject.getData(), elixirObject.getDisplay(), elixirObject.getLore(), elixirObject.getEffects()).getItem();
+        final ItemStack elixirItem = new ElixirBuilder(elixirObject.getMaterial(), elixirObject.getData(), elixirObject.getDisplay(), elixirObject.getLore(), elixirObject.getEffects(), elixirObject.getAmount()).getItem();
 
         if (target.getInventory().firstEmpty() == -1)
         {

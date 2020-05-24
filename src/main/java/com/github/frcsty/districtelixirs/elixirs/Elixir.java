@@ -14,8 +14,9 @@ public class Elixir
     private String             display;
     private List<String>       lore;
     private List<PotionEffect> effects;
+    private int amount;
 
-    Elixir(final String name, final Material material, final int data, final String display, final List<String> lore, final List<PotionEffect> effects)
+    Elixir(final String name, final Material material, final int data, final String display, final List<String> lore, final List<PotionEffect> effects, final int amount)
     {
         this.name = name;
         this.material = material;
@@ -23,6 +24,7 @@ public class Elixir
         this.display = display;
         this.lore = lore;
         this.effects = effects;
+        this.amount = amount;
     }
 
     public final String getName()
@@ -84,5 +86,9 @@ public class Elixir
     {
         this.effects = values;
     }
+
+    public final int getAmount() { return this.amount; }
+
+    public final void setAmount(final int value) { this.amount = value; }
 
 }
