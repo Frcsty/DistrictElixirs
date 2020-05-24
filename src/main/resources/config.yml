@@ -13,12 +13,6 @@ elixirs:
     data: 1
     display: '&dFused Elixir'
     lore:
-      - '&7Strength II (1:30)'
-      - '&7Speed II (1:30)'
-      - ''
-      - '&5When Applied:'
-      - '&9+40% Speed'
-      - '&9+260% Attack Damage'
       - '&7Used by warriors to destroy their'
       - '&7opponents in intense battles!'
       - ''
@@ -31,13 +25,11 @@ elixirs:
         amplifier: 1
   aquatic:
     material: POTION
-    data: 2
+    data: 1
     display: '&bAquatic Elixir'
     lore:
-      - '&7Water Breathing (30:00)'
-      - ''
       - '&7Explore the sunken ruins with ease'
-      - '&7while using this bizzare concoction.'
+      - '&7while using this bizarre concoction.'
       - ''
     effects:
       water_breathing:

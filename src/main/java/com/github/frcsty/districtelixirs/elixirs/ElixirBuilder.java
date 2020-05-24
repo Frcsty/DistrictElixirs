@@ -6,17 +6,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import java.util.List;
 
 public class ElixirBuilder
 {
 
-    private Material     material;
-    private int data;
-    private String       display;
-    private List<String> lore;
+    private Material           material;
+    private int                data;
+    private String             display;
+    private List<String>       lore;
     private List<PotionEffect> effects;
 
     public ElixirBuilder(final Material material, final int data, final String display, final List<String> lore, final List<PotionEffect> effects)
@@ -30,7 +29,7 @@ public class ElixirBuilder
 
     public ItemStack getItem()
     {
-        ItemStack item = new ItemStack(material, (byte) data);
+        ItemStack item = new ItemStack(material, 1, (byte) data);
         final ItemMeta meta = item.getItemMeta();
         final PotionMeta potionMeta = (PotionMeta) meta;
 
@@ -44,8 +43,10 @@ public class ElixirBuilder
             potionMeta.setLore(Color.colorize(lore));
         }
 
-        if (!effects.isEmpty()) {
-            for (PotionEffect effect : effects) {
+        if (!effects.isEmpty())
+        {
+            for (PotionEffect effect : effects)
+            {
                 potionMeta.addCustomEffect(effect, false);
             }
         }
